@@ -3,6 +3,29 @@ import styled, { css, keyframes } from 'styled-components'
 import { media, setColor, setLetterSpacing } from '../../styles';
 import { setRem, setBorder } from './../../styles';
 
+
+const fadeIn = (start,point,end) => {
+    const animation = keyframes`
+    0%{
+        opacity:0;
+        transform:translateY(${start})
+    }
+    50%{
+        opacity:0.5;
+        transform:translateY(${point})
+    }
+    100%{
+        opacity:1;
+        transform:translateY(${end})
+    }
+    `
+    return css`animation:${animation} 3s ease-in-out;`
+
+
+}
+
+
+
 const Banner = ({ title, className, greeting, children, text }) => {
     debugger
     return (
@@ -21,7 +44,7 @@ const BannerWrapper = styled(Banner)`
     padding: ${setRem(60)} ${setRem(32)};
     text-align: center;
     color: ${setColor.mainWhite};
-    ${setLetterSpacing(3)}
+    ${setLetterSpacing(3)};
     h1 {
         text-transform: capitalize;
         font-size: ${setRem(48)};
@@ -37,8 +60,15 @@ const BannerWrapper = styled(Banner)`
     ${media.tablet`
     width: 70vw;
         p { width: 75%};
-        ${setBorder({width:'6px',color:setColor.primaryColor})}
+        ${setBorder({ width: '6px', color: setColor.primaryColor })}
     `}
+    /* animation */
+    h1{
+        ${fadeIn('100%','-10%','0%')};
+    }
+    .info{
+        ${fadeIn('-100%','10%','0%')};
+    }
 
 
 `
