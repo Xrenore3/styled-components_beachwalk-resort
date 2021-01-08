@@ -27,7 +27,6 @@ const fadeIn = (start,point,end) => {
 
 
 const Banner = ({ title, className, greeting, children, text }) => {
-    debugger
     return (
         <div className={className}>
             <h1>{greeting} <span>{title}</span></h1>
