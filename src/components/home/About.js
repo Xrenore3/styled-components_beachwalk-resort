@@ -45,7 +45,7 @@ const AboutCenter = styled.div`
 }
 width: 90vw;
 margin: 0 auto;
-${media.desktop`
+${media.large`
 .about-info, .about-img {
   align-self: center;
   padding: ${setRem(0)}

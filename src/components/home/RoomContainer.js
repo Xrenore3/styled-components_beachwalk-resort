@@ -25,18 +25,20 @@ const RoomContainer = () => {
 const RoomsCenter = styled.div`
     width: 90vw;
     margin: 0 auto;
-    ${media.tablet`
+    ${media.large`
+        max-width: 1170px;
+        width: 100vw;
+    `};
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
+    /* ${media.tablet`
         display:grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: ${setRem(32)};
-    `}
-    ${media.desktop`
-        max-width: 1170px;
-        width: 100vw;
-    `}
+    `} 
     ${media.large`
         grid-template-columns: repeat(3, 1fr);
-    `}
+    `} */
 `
 
 export default RoomContainer
