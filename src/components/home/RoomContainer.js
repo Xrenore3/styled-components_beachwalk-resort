@@ -28,15 +28,15 @@ const RoomsCenter = styled.div`
         width: 100vw;
     `};
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(360px,1fr));
-    /* ${media.tablet`
+    /* grid-template-columns: repeat(auto-fit,minmax(360px,1fr)); */
+    ${media.tablet`
         display:grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: ${setRem(32)};
     `} 
     ${media.large`
         grid-template-columns: repeat(3, 1fr);
-    `} */
+    `}
 `
 
 export default RoomContainer

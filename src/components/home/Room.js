@@ -8,7 +8,8 @@ const Room = ({ className, room, setRoomDetails }) => {
     const { id = '', img = '', title = '', info = '', price = 0, showDetails = false } = room;
 
     return (
-        <article className={className}>
+        <div>
+        <div className={className}>
             <div className="img-container">
                 <img src={img} alt='single room' />
                 <div className="price">${price}</div>
@@ -19,9 +20,8 @@ const Room = ({ className, room, setRoomDetails }) => {
                     {showDetails && info}
                 </p>
                 <SmallButton onClick={() => setRoomDetails(id)} >{showDetails?'close':'view'}</SmallButton>
-
             </div>
-        </article>
+        </div></div>
     )
 }
 

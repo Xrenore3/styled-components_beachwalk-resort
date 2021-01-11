@@ -11,7 +11,7 @@ function App() {
   const setBannerDetails = () => setState({ ...state, showBannerDetails: true });
   const setAboutDetails = () => setState({ ...state, showAboutDetails: true });
   const setRoomDetails = (id) => {
-  debugger
+  
     return setState({
       ...state, rooms: state.rooms.map(room => {
         if (id === room.id) {
