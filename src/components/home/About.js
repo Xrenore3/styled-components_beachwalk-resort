@@ -6,7 +6,10 @@ import aboutImg from '../../images/aboutBcg.jpeg'
 import { PrimaryButton } from '../globals/Buttons'
 import { media, setBorder, setColor, setLetterSpacing, setRem } from './../../styles';
 
-const About = () => {
+const About = ({ setAboutDetails, showAboutDetails }) => {
+  const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni modi beatae eos
+  sequi corrupti ratione? Nobis omnis veritatis provident maiores, praesentium,
+  sed neque ducimus id in ipsam nihil iure eum?`
   return (
     <Section>
       <AboutCenter>
@@ -15,11 +18,10 @@ const About = () => {
         </div>
         <div className="about-info">
           <Title title='about us' ></Title>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni modi beatae eos
-          sequi corrupti ratione? Nobis omnis veritatis provident maiores, praesentium,
-          sed neque ducimus id in ipsam nihil iure eum?
+          <p> {text}
+            {showAboutDetails && text}
           </p>
-          <PrimaryButton>read more</PrimaryButton>
+          {!showAboutDetails && <PrimaryButton onClick={setAboutDetails}>read more</PrimaryButton>}
         </div>
 
       </AboutCenter>

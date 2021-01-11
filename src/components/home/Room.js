@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { setRem, setColor, setLetterSpacing, setBorder, setTransition, setShadow } from './../../styles';
 
 
-const Room = ({ className, room }) => {
-    const { img = '', title = '', info = '', price = 0 } = room;
+const Room = ({ className, room, setRoomDetails }) => {
+    const { id = '', img = '', title = '', info = '', price = 0, showDetails = false } = room;
 
     return (
         <article className={className}>
@@ -15,8 +15,10 @@ const Room = ({ className, room }) => {
             </div>
             <div className="room-info">
                 <h4>{title}</h4>
-                <p>{info}</p>
-                <SmallButton>View</SmallButton>
+                <p> {info}
+                    {showDetails && info}
+                </p>
+                <SmallButton onClick={() => setRoomDetails(id)} >{showDetails?'close':'view'}</SmallButton>
 
             </div>
         </article>

@@ -4,12 +4,13 @@ import Header from './../components/home/Header';
 import RoomContainer from './../components/home/RoomContainer'
 
 
-const Home = () => {
+const Home = ({state, setBannerDetails,setAboutDetails, setRoomDetails}) => {
+  
   return (
     <>
-      <Header/>
-      <About/>
-      <RoomContainer/>
+      <Header showBannerDetails={state.showBannerDetails} setBannerDetails={setBannerDetails}/>
+      <About setAboutDetails={setAboutDetails} showAboutDetails={state.showAboutDetails}/>
+      <RoomContainer rooms={state.rooms} setRoomDetails={setRoomDetails} />
     </>
   )
 }

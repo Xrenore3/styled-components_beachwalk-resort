@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from '../globals/Section';
 import Title from '../globals/Title';
 import Room from './Room';
-import rooms from './rooms-data';
 import styled from 'styled-components';
 import { media } from '../../styles';
 import { setRem } from './../../styles';
 
-const RoomContainer = () => {
-    const [state, setState] = useState(rooms);
+const RoomContainer = ({ rooms, setRoomDetails }) => {
 
     return (
         <Section background='#fffff0'>
-            <Title title='our rooms' center/>
+            <Title title='our rooms' center />
             <RoomsCenter>
-                {state.map(room => {
-                    return <Room key={room.id} room={room} />
+                {rooms.map(room => {
+                    return <Room key={room.id} room={room} setRoomDetails={setRoomDetails} />
                 })}
             </RoomsCenter>
         </Section>
